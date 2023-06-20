@@ -43,6 +43,8 @@ class CacheService < ApplicationService
       true
     rescue Aws::S3::Errors::NotFound
       false
+    rescue Aws::S3::Errors::Http301Error
+      false
     rescue Aws::S3::Errors::Forbidden
       raise Error::S3BucketForbidden.new
     end
