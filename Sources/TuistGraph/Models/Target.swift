@@ -137,8 +137,6 @@ public struct Target: Equatable, Hashable, Comparable, Codable {
     /// Target can link static products (e.g. an app can link a staticLibrary)
     public func canLinkStaticProducts() -> Bool {
         [
-            .staticFramework,
-            .staticLibrary,
             .framework,
             .app,
             .commandLineTool,
